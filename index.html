@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showPass() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="img-container">
+            <img src="./images/GDSCLogo.svg">
+        </div>
+        <form id="loginpage">
+            <div class="alert">Your Form Sent Successfully</div>
+            
+            <label for="name">Name</label>
+            <input class="in" style="text-transform: uppercase;" type="text" id="name" name="name" required>
+
+            <label for="rollNumber">Roll Number</label>
+            <input class="in" type="text" id="rollNumber" name="rollNumber" placeholder="Ex:2023BCS0096" required>
+
+            <label for="password">Password</label>
+            <input class="in" type="password" id="password" name="password" required>
+            <input type="checkbox" onclick="showPass()" class="show">
+            <span class="sp">Show Password</span>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.2/firebase-firestore.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
